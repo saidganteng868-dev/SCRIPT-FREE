@@ -6,6 +6,12 @@ link:"https://www.mediafire.com/file/dn7fwi77x8il935/HuTaoMD-V.0.2.zip/file",
 category:"group"
 },
 {
+name:"SCRIPT Arona_MD_andri",
+desc:"Script Cocok untuk Jaga grup",
+link:"https://www.mediafire.com/file/gozipp38472m9qj/Arona_MD_andri.tar.gz/file",
+category:"group"
+},
+{
 name:"SCRIPT LYRRA MB V7",
 desc:"Script cocok untuk jaga grup.",
 link:"https://www.mediafire.com/file/l3ste56e9a7ft72/Script_Lyrra_MD_V7.zip/file",
@@ -89,3 +95,39 @@ tampilkan(scripts.filter(s=>s.name.toLowerCase().includes(value)));
 });
 
 tampilkan(scripts);
+
+// ===== VIDEO CONTROL =====
+
+const video = document.getElementById("bgVideo");
+const soundBtn = document.getElementById("soundToggle");
+const videoBtn = document.getElementById("videoToggle");
+
+// Biar bisa bunyi setelah klik
+document.addEventListener("click", () => {
+  video.play();
+});
+
+video.muted = false;
+video.volume = 1;
+
+// Toggle Sound
+function toggleSound(){
+  if(video.muted){
+    video.muted = false;
+    soundBtn.innerHTML = "🔊";
+  }else{
+    video.muted = true;
+    soundBtn.innerHTML = "🔇";
+  }
+}
+
+// Toggle Video Show/Hide
+function toggleVideo(){
+  if(video.style.display === "none"){
+    video.style.display = "block";
+    videoBtn.innerHTML = "🎥";
+  }else{
+    video.style.display = "none";
+    videoBtn.innerHTML = "🚫";
+  }
+}

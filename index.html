@@ -10,10 +10,16 @@
 <body>
 
 <!-- VIDEO BACKGROUND -->
-<video autoplay muted loop playsinline id="bgVideo">
+<<video id="bgVideo" autoplay loop>
   <source src="bg.mp4" type="video/mp4">
 </video>
+
 <div class="overlay"></div>
+
+<div class="video-controls">
+  <button id="videoToggle" onclick="toggleVideo()">🎥</button>
+  <button id="soundToggle" onclick="toggleSound()">🔊</button>
+</div>
 
 <header>
   <div class="logo">
@@ -75,7 +81,7 @@
     <button onclick="filterCategory('group')">Jaga Group</button>
     <button onclick="filterCategory('bug')">Bug</button>
     <button onclick="filterCategory('cpanel')">Cpanel</button>
-    <button onclick="filterCategory('store')">Store</button>
+    <button onclick="filterCategory('store')">store</button>
   </div>
 
   <div id="scriptList"></div>
