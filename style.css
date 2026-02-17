@@ -1,0 +1,301 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+color:white;
+overflow-x:hidden;
+}
+
+/* VIDEO */
+#bgVideo{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(6px);
+z-index:-1;
+}
+
+/* HEADER */
+header{
+padding:25px 20px;
+text-align:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+}
+
+.icon{
+width:60px;
+height:60px;
+border-radius:50%;
+background:linear-gradient(45deg,#7b2ff7,#f107a3);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+box-shadow:0 0 25px #7b2ff7;
+}
+
+header h1{
+font-size:24px;
+background:linear-gradient(45deg,#b16cea,#ff5edf);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+header p{
+font-size:13px;
+color:#ccc;
+}
+
+nav{
+margin-top:20px;
+}
+
+nav a{
+display:inline-block;
+padding:10px 20px;
+margin:5px;
+border-radius:25px;
+background:rgba(255,255,255,0.05);
+color:#ccc;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a.active,
+nav a:hover{
+background:linear-gradient(45deg,#7b2ff7,#f107a3);
+color:white;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h2{
+font-size:34px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#ccc;
+margin-bottom:25px;
+}
+
+/* SEARCH */
+.search-box{
+position:relative;
+max-width:500px;
+margin:0 auto 20px;
+}
+
+.search-box input{
+width:100%;
+padding:15px 45px 15px 20px;
+border-radius:30px;
+border:2px solid #7b2ff7;
+background:transparent;
+color:white;
+}
+
+.search-box span{
+position:absolute;
+right:15px;
+top:50%;
+transform:translateY(-50%);
+}
+
+/* FILTER */
+.filter-buttons{
+margin-bottom:30px;
+}
+
+.filter-buttons button{
+padding:10px 20px;
+margin:6px;
+border-radius:25px;
+border:none;
+background:rgba(255,255,255,0.05);
+color:#ccc;
+cursor:pointer;
+transition:0.3s;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover{
+background:linear-gradient(45deg,#7b2ff7,#f107a3);
+color:white;
+}
+
+/* CARD */
+.script-card{
+background:rgba(20,20,20,0.9);
+padding:25px;
+border-radius:20px;
+margin:20px auto;
+max-width:600px;
+text-align:left;
+box-shadow:0 0 20px rgba(123,47,247,0.3);
+}
+
+.badge{
+display:inline-block;
+padding:5px 12px;
+border-radius:15px;
+font-size:12px;
+margin-bottom:10px;
+background:#7b2ff7;
+}
+
+.script-title{
+font-size:20px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.script-desc{
+font-size:14px;
+color:#bbb;
+margin-bottom:15px;
+}
+
+.download-btn{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:linear-gradient(45deg,#7b2ff7,#f107a3);
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.download-btn:hover{
+transform:scale(1.05);
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#aaa;
+}
+
+/* SUPPORT SECTION */
+.support{
+text-align:center;
+padding:60px 20px;
+}
+
+.support-title{
+color:#00ff88;
+font-size:28px;
+margin-bottom:10px;
+}
+
+.support-sub{
+color:#ccc;
+margin-bottom:30px;
+}
+
+.qris-box{
+background:rgba(20,20,20,0.9);
+padding:25px;
+border-radius:20px;
+border:1px solid #00ff88;
+max-width:350px;
+margin:0 auto 40px;
+box-shadow:0 0 20px rgba(0,255,136,0.3);
+}
+
+.qris-box img{
+width:220px;
+margin:15px 0;
+border-radius:12px;
+}
+
+.support-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:800px;
+margin:0 auto 40px;
+}
+
+.support-card{
+background:rgba(20,20,20,0.9);
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 15px rgba(0,255,136,0.2);
+}
+
+.icon-green{
+font-size:28px;
+color:#00ff88;
+margin-bottom:10px;
+}
+
+.donasi-btn{
+display:inline-block;
+padding:15px 35px;
+border-radius:30px;
+background:linear-gradient(45deg,#00ff88,#00cc66);
+color:black;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+
+.donasi-btn:hover{
+transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact{
+text-align:center;
+padding:60px 20px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:900px;
+margin:40px auto;
+}
+
+.contact-card{
+background:rgba(20,20,20,0.9);
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(123,47,247,0.3);
+}
+
+.icon-purple{
+font-size:28px;
+color:#b16cea;
+margin-bottom:15px;
+}

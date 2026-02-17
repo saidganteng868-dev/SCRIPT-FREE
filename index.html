@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUDA STORE</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline id="bgVideo">
+  <source src="bg.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<header>
+  <div class="logo">
+    <div class="icon">⌨</div>
+    <div>
+      <h1>YUDA STORE</h1>
+      <p>SUBSCRIBE YT </p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#scripts">Scripts</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+</header>
+
+<!-- SUPPORT OWNER -->
+<section class="support">
+  <h2 class="support-title">SUPPORT OWNER</h2>
+  <p class="support-sub">Bantu server tetap hidup dengan berdonasi seikhlasnya.</p>
+
+  <div class="qris-box">
+    <h3>QRIS / E-Wallet</h3>
+    <img src="qris.png" alt="QRIS">
+    <p>Scan QR code di atas</p>
+  </div>
+
+  <div class="support-grid">
+    <div class="support-card">
+      <div class="icon-green">💾</div>
+      <h3>Maintenance Server</h3>
+      <p>Dana donasi digunakan untuk biaya maintenance server agar script selalu online 24/7</p>
+    </div>
+
+    <div class="support-card">
+      <div class="icon-green">🔗</div>
+      <h3>Update Script Terbaru</h3>
+      <p>Mendukung pengembangan dan update script terbaru dengan fitur-fitur baru</p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/6285654809718?text=Hallo, Banh Saya Sudah Donasi " target="_blank" class="donasi-btn">
+    Konfirmasi Donasi
+  </a>
+</section>
+
+<section id="scripts" class="hero">
+  <h2>Daftar Script</h2>
+  <p>Gunakan fitur pencarian atau filter di bawah ini.</p>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Cari nama script...">
+    <span>🔍</span>
+  </div>
+
+  <div class="filter-buttons">
+    <button onclick="filterCategory('all')" class="active">Semua</button>
+    <button onclick="filterCategory('group')">Jaga Group</button>
+    <button onclick="filterCategory('bug')">Bug</button>
+    <button onclick="filterCategory('cpanel')">Cpanel</button>
+    <button onclick="filterCategory('store')">Store</button>
+  </div>
+
+  <div id="scriptList"></div>
+  
+</section>
+<!-- KONTAK OWNER -->
+<section id="kontak" class="contact">
+  <h2>Kontak Owner</h2>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon-purple">👤</div>
+      <h3>Owner</h3>
+      <p>YUDA STORE</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon-purple">📱</div>
+      <h3>WhatsApp</h3>
+      <p>+62 856-5480-9718</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon-purple">✈️</div>
+      <h3>Telegram</h3>
+      <p>@Yuda1345</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+© 2026 YUDA STOTE
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
