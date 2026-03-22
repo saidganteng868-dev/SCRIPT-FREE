@@ -4,116 +4,1012 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YUDA STORE</title>
-<link rel="stylesheet" href="style.css">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph Meta Tags untuk Share Link -->
+<meta property="og:title" content="YUDA STORE - Script WhatsApp & Tools Premium">
+<meta property="og:description" content="Kumpulan script WhatsApp Bot, Bug, cPanel, dan Store berkualitas. Download gratis dan support 24/7!">
+<meta property="og:image" content="https://script-free-khaki.vercel.app/Yuda.png">
+<meta property="og:url" content="https://script-free-khaki.vercel.app">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YUDA STORE">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YUDA STORE - Script WhatsApp & Tools Premium">
+<meta name="twitter:description" content="Kumpulan script WhatsApp Bot, Bug, cPanel, dan Store berkualitas. Download gratis!">
+<meta name="twitter:image" content="https://script-free-khaki.vercel.app/Yuda.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input, textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+:root {
+  --primary: #7b2ff7;
+  --secondary: #f107a3;
+  --accent: #00ff88;
+  --dark: #0a0a0a;
+  --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  color: white;
+  overflow-x: hidden;
+  background: var(--dark);
+}
+
+/* VIDEO BACKGROUND */
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+.video-controls {
+  position: fixed;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.video-controls button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.5);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-controls button:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 30px rgba(123, 47, 247, 0.8);
+}
+
+/* HEADER */
+header {
+  padding: 25px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 0 30px rgba(123, 47, 247, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(123, 47, 247, 0.6); }
+  50% { box-shadow: 0 0 50px rgba(123, 47, 247, 0.9); }
+}
+
+header h1 {
+  font-size: 28px;
+  background: linear-gradient(45deg, #b16cea, #ff5edf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: var(--glass);
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+}
+
+nav a.active,
+nav a:hover {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(123, 47, 247, 0.4);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #fff, #b16cea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.hero p {
+  color: #aaa;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* SECTION HEADER */
+.section-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #fff, #b16cea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  color: #888;
+}
+
+/* SEARCH */
+.search-box {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px 20px 15px 50px;
+  border-radius: 30px;
+  border: 2px solid rgba(123, 47, 247, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.3);
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+/* FILTER */
+.filter-buttons {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.filter-buttons button {
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  background: var(--glass);
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(123, 47, 247, 0.4);
+}
+
+/* SCRIPT LIST */
+.script-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  padding: 0 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.script-card {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 25px;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.2);
+  border: 1px solid rgba(123, 47, 247, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.script-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.script-card:hover::before {
+  left: 100%;
+}
+
+.script-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(123, 47, 247, 0.4);
+  border-color: rgba(123, 47, 247, 0.5);
+}
+
+/* ICON DI KANAN ATAS */
+.script-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.script-icon {
+  font-size: 36px;
+  line-height: 1;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge.group { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.badge.bug { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.badge.cpanel { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.badge.store { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+
+/* META INFO - NODE & FEATURES */
+.script-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.node-version {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 15px;
+  background: rgba(83, 158, 67, 0.2);
+  color: #539e43;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(83, 158, 67, 0.3);
+}
+
+.features-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 15px;
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.node-version i,
+.features-count i {
+  font-size: 14px;
+}
+
+.script-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+  padding-right: 50px;
+}
+
+.script-desc {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.download-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.download-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(123, 47, 247, 0.5);
+}
+
+/* SUPPORT SECTION */
+.support {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.support-title {
+  color: var(--accent);
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.support-sub {
+  color: #888;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.qris-box {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid var(--accent);
+  max-width: 380px;
+  margin: 0 auto 50px;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+  transition: all 0.3s ease;
+}
+
+.qris-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
+}
+
+.qris-box h3 {
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.qris-box img {
+  width: 250px;
+  margin: 20px 0;
+  border-radius: 15px;
+  border: 3px solid rgba(0, 255, 136, 0.3);
+}
+
+.qris-box p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.qris-box small {
+  color: #666;
+  font-size: 12px;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.support-card {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  transition: all 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+}
+
+.icon-green {
+  font-size: 40px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.support-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.support-card p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.donasi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, var(--accent), #00cc66);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+.donasi-btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5);
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.contact-card {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.2);
+  border: 1px solid rgba(123, 47, 247, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(123, 47, 247, 0.4);
+}
+
+.icon-purple {
+  font-size: 40px;
+  color: #b16cea;
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.contact-card p {
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.online {
+  background: rgba(0, 255, 136, 0.2);
+  color: var(--accent);
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(123, 47, 247, 0.4);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #b16cea, #ff5edf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(123, 47, 247, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h2 { font-size: 28px; }
+  .script-list { grid-template-columns: 1fr; }
+  .video-controls { right: 15px; }
+  .video-controls button { width: 45px; height: 45px; font-size: 16px; }
+  nav a { padding: 10px 18px; font-size: 13px; }
+  .support-title { font-size: 24px; }
+  .script-icon { font-size: 28px; }
+  .script-meta { flex-direction: column; gap: 5px; }
+}
+
+/* ANTI MALING PROTECTION */
+</style>
+
+<!-- ANTI MALING PROTECTION SCRIPT -->
+<script>
+// Disable Right Click
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  showWarning();
+  return false;
+}, false);
+
+// Disable Keyboard Shortcuts
+document.addEventListener('keydown', function(e) {
+  if(e.keyCode === 123) {
+    e.preventDefault();
+    showWarning();
+    return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+    e.preventDefault();
+    showWarning();
+    return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+    e.preventDefault();
+    showWarning();
+    return false;
+  }
+  if(e.ctrlKey && e.keyCode === 85) {
+    e.preventDefault();
+    showWarning();
+    return false;
+  }
+  if(e.ctrlKey && e.keyCode === 83) {
+    e.preventDefault();
+    showWarning();
+    return false;
+  }
+  if(e.ctrlKey && e.keyCode === 80) {
+    e.preventDefault();
+    showWarning();
+    return false;
+  }
+  if(e.ctrlKey && e.keyCode === 65) {
+    e.preventDefault();
+    return false;
+  }
+  if(e.ctrlKey && e.keyCode === 67) {
+    e.preventDefault();
+    return false;
+  }
+  if(e.ctrlKey && e.keyCode === 88) {
+    e.preventDefault();
+    return false;
+  }
+});
+
+// Disable Copy, Cut, Paste
+document.addEventListener('copy', function(e) {
+  e.preventDefault();
+  return false;
+});
+document.addEventListener('cut', function(e) {
+  e.preventDefault();
+  return false;
+});
+document.addEventListener('paste', function(e) {
+  e.preventDefault();
+  return false;
+});
+
+// Disable Drag
+document.addEventListener('dragstart', function(e) {
+  e.preventDefault();
+  return false;
+});
+
+// Console Warning
+console.clear();
+console.log('%c⚠️ PERINGATAN!', 'color: red; font-size: 30px; font-weight: bold;');
+console.log('%cIni adalah area terlarang!', 'color: orange; font-size: 20px;');
+console.log('%cJangan mencoba menyalin, mengubah, atau mencuri kode dari website ini.', 'color: white; font-size: 14px;');
+console.log('%c© 2026 YUDA STORE - All Rights Reserved', 'color: #7b2ff7; font-size: 12px;');
+
+// Debugger Detection
+setInterval(function() {
+  debugger;
+}, 100);
+
+// DevTools Detection
+let devtoolsOpen = false;
+const threshold = 160;
+setInterval(function() {
+  const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+  const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+  if(widthThreshold || heightThreshold) {
+    if(!devtoolsOpen) {
+      devtoolsOpen = true;
+      document.body.innerHTML = '<h1 style="text-align:center; color:red; margin-top:20%;">🚫 AKSES DITOLAK!<br>Jangan mencoba membuka Developer Tools!</h1>';
+    }
+  } else {
+    devtoolsOpen = false;
+  }
+}, 500);
+
+// Warning Function
+function showWarning() {
+  const warning = document.createElement('div');
+  warning.innerHTML = `
+    <div style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #ff4757, #ff6348);
+      color: white;
+      padding: 30px 50px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(255, 71, 87, 0.5);
+      z-index: 99999;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      animation: popIn 0.3s ease;
+    ">
+      <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
+      <h2 style="margin: 0 0 10px 0; font-size: 24px;">AKSI DILARANG!</h2>
+      <p style="margin: 0; font-size: 14px;">Jangan mencoba mencuri kode website ini!</p>
+      <p style="margin: 10px 0 0 0; font-size: 12px; opacity: 0.8;">© 2026 YUDA STORE</p>
+    </div>
+  `;
+  document.body.appendChild(warning);
+  
+  setTimeout(() => {
+    warning.remove();
+  }, 2000);
+}
+
+// Anti Frame
+if(window.top !== window.self) {
+  window.top.location = window.self.location;
+}
+</script>
+
 </head>
 <body>
 
 <!-- VIDEO BACKGROUND -->
-<<video id="bgVideo" autoplay loop>
+<video id="bgVideo" autoplay loop muted playsinline>
   <source src="bg.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
 <div class="video-controls">
-  <button id="videoToggle" onclick="toggleVideo()">🎥</button>
-  <button id="soundToggle" onclick="toggleSound()">🔊</button>
+  <button id="videoToggle" onclick="toggleVideo()" title="Toggle Video"><i class="fas fa-video"></i></button>
+  <button id="soundToggle" onclick="toggleSound()" title="Toggle Sound"><i class="fas fa-volume-mute"></i></button>
 </div>
 
 <header>
   <div class="logo">
-    <div class="icon">⌨</div>
+    <div class="icon"><i class="fas fa-terminal"></i></div>
     <div>
       <h1>YUDA STORE</h1>
-      <p>SUBSCRIBE YT </p>
+      <p>SUBSCRIBE YT YUDA DEV</p>
     </div>
   </div>
 
   <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#scripts">Scripts</a>
-    <a href="#kontak">Kontak</a>
+    <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="#scripts"><i class="fas fa-code"></i> Scripts</a>
+    <a href="#support"><i class="fas fa-heart"></i> Donasi</a>
+    <a href="#kontak"><i class="fas fa-address-card"></i> Kontak</a>
   </nav>
 </header>
 
+<section id="home" class="hero">
+  <h2>Selamat Datang di YUDA STORE</h2>
+  <p>Tempat download script WhatsApp Bot, tools, dan aplikasi terbaik. Gratis dan berkualitas!</p>
+</section>
+
 <!-- SUPPORT OWNER -->
-<section class="support">
-  <h2 class="support-title">SUPPORT OWNER</h2>
+<section id="support" class="support">
+  <h2 class="support-title"><i class="fas fa-hand-holding-heart"></i> SUPPORT OWNER</h2>
   <p class="support-sub">Bantu server tetap hidup dengan berdonasi seikhlasnya.</p>
 
   <div class="qris-box">
-    <h3>QRIS / E-Wallet</h3>
-    <img src="qris.png" alt="QRIS">
-    <p>Scan QR code di atas</p>
+    <h3><i class="fas fa-qrcode"></i> QRIS / E-Wallet</h3>
+    <img src="qris.png" alt="QRIS Payment">
+    <p>Scan QR code di atas untuk donasi</p>
+    <small>Minimal Rp 1.000 juga diterima dengan senang hati!</small>
   </div>
 
   <div class="support-grid">
     <div class="support-card">
-      <div class="icon-green">💾</div>
+      <div class="icon-green"><i class="fas fa-server"></i></div>
       <h3>Maintenance Server</h3>
       <p>Dana donasi digunakan untuk biaya maintenance server agar script selalu online 24/7</p>
     </div>
 
     <div class="support-card">
-      <div class="icon-green">🔗</div>
+      <div class="icon-green"><i class="fas fa-sync-alt"></i></div>
       <h3>Update Script Terbaru</h3>
       <p>Mendukung pengembangan dan update script terbaru dengan fitur-fitur baru</p>
     </div>
   </div>
 
   <a href="https://wa.me/6285654809718?text=Hallo, Banh Saya Sudah Donasi " target="_blank" class="donasi-btn">
-    Konfirmasi Donasi
+    <i class="fab fa-whatsapp"></i> Konfirmasi Donasi
   </a>
 </section>
 
-<section id="scripts" class="hero">
-  <h2>Daftar Script</h2>
-  <p>Gunakan fitur pencarian atau filter di bawah ini.</p>
+<section id="scripts" class="scripts-section">
+  <div class="section-header">
+    <h2><i class="fas fa-code"></i> Daftar Script</h2>
+    <p>Gunakan fitur pencarian atau filter di bawah ini.</p>
+  </div>
 
   <div class="search-box">
+    <i class="fas fa-search search-icon"></i>
     <input type="text" id="search" placeholder="Cari nama script...">
-    <span>🔍</span>
   </div>
 
   <div class="filter-buttons">
-    <button onclick="filterCategory('all')" class="active">Semua</button>
-    <button onclick="filterCategory('group')">Jaga Group</button>
-    <button onclick="filterCategory('bug')">Bug</button>
-    <button onclick="filterCategory('cpanel')">Cpanel</button>
-    <button onclick="filterCategory('store')">store</button>
+    <button onclick="filterCategory('all')" class="active"><i class="fas fa-th-large"></i> Semua</button>
+    <button onclick="filterCategory('group')"><i class="fas fa-users"></i> Jaga Group</button>
+    <button onclick="filterCategory('bug')"><i class="fas fa-bug"></i> Bug</button>
+    <button onclick="filterCategory('cpanel')"><i class="fas fa-cpanel"></i> cPanel</button>
+    <button onclick="filterCategory('store')"><i class="fas fa-store"></i> Store</button>
   </div>
 
-  <div id="scriptList"></div>
+  <div id="scriptList" class="script-list"></div>
   
 </section>
+
 <!-- KONTAK OWNER -->
 <section id="kontak" class="contact">
-  <h2>Kontak Owner</h2>
+  <div class="section-header">
+    <h2><i class="fas fa-address-card"></i> Kontak Owner</h2>
+    <p>Hubungi kami untuk pertanyaan atau kerjasama</p>
+  </div>
 
   <div class="contact-grid">
     <div class="contact-card">
-      <div class="icon-purple">👤</div>
+      <div class="icon-purple"><i class="fas fa-user-tie"></i></div>
       <h3>Owner</h3>
       <p>YUDA STORE</p>
+      <span class="status online">Online</span>
     </div>
 
     <div class="contact-card">
-      <div class="icon-purple">📱</div>
+      <div class="icon-purple"><i class="fab fa-whatsapp"></i></div>
       <h3>WhatsApp</h3>
       <p>+62 856-5480-9718</p>
+      <a href="https://wa.me/6285654809718" target="_blank" class="contact-btn">Chat Sekarang</a>
     </div>
 
     <div class="contact-card">
-      <div class="icon-purple">✈️</div>
+      <div class="icon-purple"><i class="fab fa-telegram"></i></div>
       <h3>Telegram</h3>
       <p>@Yuda1345</p>
+      <a href="https://t.me/Yuda1345" target="_blank" class="contact-btn">Message</a>
     </div>
   </div>
 </section>
 
 <footer>
-© 2026 YUDA STOTE
+  <div class="footer-content">
+    <div class="footer-logo">
+      <i class="fas fa-terminal"></i> YUDA STORE
+    </div>
+    <p>© 2026 YUDA STORE. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>
