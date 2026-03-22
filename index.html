@@ -731,146 +731,16 @@ footer p {
   .script-icon { font-size: 28px; }
   .script-meta { flex-direction: column; gap: 5px; }
 }
-
-/* ANTI MALING PROTECTION */
 </style>
 
-<!-- ANTI MALING PROTECTION SCRIPT -->
+<!-- PROTEKSI RINGAN - Hanya Console Warning -->
 <script>
-// Disable Right Click
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-  showWarning();
-  return false;
-}, false);
+// Console Warning saja - tidak memblokir akses user
+console.log('%c⚠️ PERINGATAN!', 'color: red; font-size: 24px; font-weight: bold;');
+console.log('%c© 2026 YUDA STORE - All Rights Reserved', 'color: #7b2ff7; font-size: 14px;');
+console.log('%cDilarang menyalin atau mencuri kode website ini.', 'color: orange; font-size: 12px;');
 
-// Disable Keyboard Shortcuts
-document.addEventListener('keydown', function(e) {
-  if(e.keyCode === 123) {
-    e.preventDefault();
-    showWarning();
-    return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode === 73) {
-    e.preventDefault();
-    showWarning();
-    return false;
-  }
-  if(e.ctrlKey && e.shiftKey && e.keyCode === 74) {
-    e.preventDefault();
-    showWarning();
-    return false;
-  }
-  if(e.ctrlKey && e.keyCode === 85) {
-    e.preventDefault();
-    showWarning();
-    return false;
-  }
-  if(e.ctrlKey && e.keyCode === 83) {
-    e.preventDefault();
-    showWarning();
-    return false;
-  }
-  if(e.ctrlKey && e.keyCode === 80) {
-    e.preventDefault();
-    showWarning();
-    return false;
-  }
-  if(e.ctrlKey && e.keyCode === 65) {
-    e.preventDefault();
-    return false;
-  }
-  if(e.ctrlKey && e.keyCode === 67) {
-    e.preventDefault();
-    return false;
-  }
-  if(e.ctrlKey && e.keyCode === 88) {
-    e.preventDefault();
-    return false;
-  }
-});
-
-// Disable Copy, Cut, Paste
-document.addEventListener('copy', function(e) {
-  e.preventDefault();
-  return false;
-});
-document.addEventListener('cut', function(e) {
-  e.preventDefault();
-  return false;
-});
-document.addEventListener('paste', function(e) {
-  e.preventDefault();
-  return false;
-});
-
-// Disable Drag
-document.addEventListener('dragstart', function(e) {
-  e.preventDefault();
-  return false;
-});
-
-// Console Warning
-console.clear();
-console.log('%c⚠️ PERINGATAN!', 'color: red; font-size: 30px; font-weight: bold;');
-console.log('%cIni adalah area terlarang!', 'color: orange; font-size: 20px;');
-console.log('%cJangan mencoba menyalin, mengubah, atau mencuri kode dari website ini.', 'color: white; font-size: 14px;');
-console.log('%c© 2026 YUDA STORE - All Rights Reserved', 'color: #7b2ff7; font-size: 12px;');
-
-// Debugger Detection
-setInterval(function() {
-  debugger;
-}, 100);
-
-// DevTools Detection
-let devtoolsOpen = false;
-const threshold = 160;
-setInterval(function() {
-  const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-  const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-  if(widthThreshold || heightThreshold) {
-    if(!devtoolsOpen) {
-      devtoolsOpen = true;
-      document.body.innerHTML = '<h1 style="text-align:center; color:red; margin-top:20%;">🚫 AKSES DITOLAK!<br>Jangan mencoba membuka Developer Tools!</h1>';
-    }
-  } else {
-    devtoolsOpen = false;
-  }
-}, 500);
-
-// Warning Function
-function showWarning() {
-  const warning = document.createElement('div');
-  warning.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: linear-gradient(135deg, #ff4757, #ff6348);
-      color: white;
-      padding: 30px 50px;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(255, 71, 87, 0.5);
-      z-index: 99999;
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-      animation: popIn 0.3s ease;
-    ">
-      <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
-      <h2 style="margin: 0 0 10px 0; font-size: 24px;">AKSI DILARANG!</h2>
-      <p style="margin: 0; font-size: 14px;">Jangan mencoba mencuri kode website ini!</p>
-      <p style="margin: 10px 0 0 0; font-size: 12px; opacity: 0.8;">© 2026 YUDA STORE</p>
-    </div>
-  `;
-  document.body.appendChild(warning);
-  
-  setTimeout(() => {
-    warning.remove();
-  }, 2000);
-}
-
-// Anti Frame
+// Anti Frame (iframe embedding) - tetap dipertahankan karena tidak mengganggu user langsung
 if(window.top !== window.self) {
   window.top.location = window.self.location;
 }
