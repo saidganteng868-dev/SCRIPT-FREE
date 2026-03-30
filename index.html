@@ -378,6 +378,7 @@ nav a:hover {
 .badge.bug { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
 .badge.cpanel { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
 .badge.store { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.badge.apk { background: linear-gradient(135deg, #3ddc84 0%, #2a9d8f 100%); }
 
 /* META INFO - NODE & FEATURES */
 .script-meta {
@@ -751,8 +752,14 @@ if(window.top !== window.self) {
 
 <!-- VIDEO BACKGROUND -->
 <video id="bgVideo" autoplay loop muted playsinline>
-  <source src="bg.mp4" type="video/mp4">
+  <source src="video.mp4" type="video/mp4">
 </video>
+
+<!-- AUDIO BACKGROUND (Terpisah dari Video) -->
+<audio id="bgAudio" loop>
+  <source src="music.mp3" type="audio/mpeg">
+  <source src="music.ogg" type="audio/ogg">
+</audio>
 
 <div class="overlay"></div>
 
@@ -831,6 +838,7 @@ if(window.top !== window.self) {
     <button onclick="filterCategory('bug')"><i class="fas fa-bug"></i> Bug</button>
     <button onclick="filterCategory('cpanel')"><i class="fas fa-cpanel"></i> cPanel</button>
     <button onclick="filterCategory('store')"><i class="fas fa-store"></i> Store</button>
+    <button onclick="filterCategory('apk')"><i class="fab fa-android"></i> APK</button>    
   </div>
 
   <div id="scriptList" class="script-list"></div>

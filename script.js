@@ -4,22 +4,58 @@
 
 const scripts = [
   {
-    name: "SCRIPT HUTAO MB V2",
+    name: "SCRIPT HUTAO MB V3",
     desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
-    link: "https://www.mediafire.com/file/dn7fwi77x8il935/HuTaoMD-V.0.2.zip/file",
+    link: "https://www.mediafire.com/file/nprkdlutbig072t/ʜᴜᴛᴀᴏ+-+ᴍᴅ+-+v3.zip/file",
     category: "group",
     icon: "🤖",
-    nodeVersion: "v18.x",
-    features: 450
+    nodeVersion: "v20",
+    features: 2800
   },
   {
-    name: "SCRIPT Arona_MD_andri",
-    desc: "Script Cocok untuk Jaga grup dengan anti-spam dan auto-respon.",
-    link: "https://www.mediafire.com/file/gozipp38472m9qj/Arona_MD_andri.tar.gz/file",
+    name: "SCRIPT MIWA ASISTEN",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/0m5fjre0c6a4rj0/miwa_v1.zip/file",
     category: "group",
     icon: "🤖",
-    nodeVersion: "v18.x",
-    features: 380
+    nodeVersion: "v20",
+    features: 1800
+  },  
+  {
+    name: "APK HEXACRASH V2",
+    desc: "Apk cocok untuk bug yang sering rip/nipu, tapi di gunaka yang baik.",
+    link: "https://www.mediafire.com/file/vd58gzf80t7efqd/HexaCrash_V2_%255B_UP_%255D.apk/file",
+    category: "apk",
+    icon: "📡",
+    nodeVersion: "v0",
+    features: 0
+  },  
+  {
+    name: "SCRIPT CHRIST MD",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/xk7ztfpvrpg4bxj/CHRISTY+(+CREDIT+JAN+DIHAPUS+).zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20 - v27",
+    features: 1898
+  },
+  {
+    name: "APK PAXBAR V2",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/tgog3pvsubt07no/🦄+PΛXBΛЯ+ᐯ2.zip/file",
+    category: "apk",
+    icon: "📡",
+    nodeVersion: "0",
+    features: 150
+  },
+  {
+    name: "SCRIPT OTAX",
+    desc: "Script cocok untuk Bugs Wa Yang Sering Nipu/Rip, tapi di gunakan yang baik.",
+    link: "https://www.mediafire.com/file/c6krrk720kcnjg7/SCRIPT_OTAX_VIA_WA__.zip/file",
+    category: "bug",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 120
   },
   {
     name: "SCRIPT LYRRA MB V7",
@@ -27,8 +63,8 @@ const scripts = [
     link: "https://www.mediafire.com/file/l3ste56e9a7ft72/Script_Lyrra_MD_V7.zip/file",
     category: "group",
     icon: "🤖",
-    nodeVersion: "v18.x",
-    features: 520
+    nodeVersion: "v20",
+    features: 2200
   },
   {
     name: "SCRIPT FURINA MB",
@@ -43,28 +79,28 @@ const scripts = [
     name: "SCRIPT AUTO ORDER PANEL",
     desc: "Script auto order panel hosting dengan sistem pembayaran otomatis.",
     link: "https://www.mediafire.com/file/ito4r46i9v4qddz/verlangauto-telegram.zip/file",
-    category: "cpanel",
-    icon: "🎛️",
-    nodeVersion: "v16.x",
-    features: 85
+    category: "store",
+    icon: "️🛍️",
+    nodeVersion: "v20",
+    features: 100
   },
   {
-    name: "SCRIPT SAKATA CRASHER V1",
-    desc: "Script cocok untuk sering rip/nipu dengan proteksi crasher.",
+    name: "SCRIPT CPANEL",
+    desc: "Script cocok untuk untuk jualan Panel bot.",
     link: "https://www.mediafire.com/file/dzj8ryri9oxh3pv/SAKATA_CRASHER_V1.zip/file",
-    category: "bug",
-    icon: "🐛",
-    nodeVersion: "v18.x",
-    features: 45
+    category: "cpanel",
+    icon: "🎛",
+    nodeVersion: "v23",
+    features: 100
   },
   {
-    name: "SCRIPT AnotherCrash V1",
-    desc: "Script cocok untuk sering rip/nipu dengan fitur crash ringan.",
-    link: "https://www.mediafire.com/file/y4eh2fep3hk8z9o/AnotherCrash+(FREE).apk/file",
-    category: "bug",
-    icon: "🐛",
-    nodeVersion: "v18.x",
-    features: 32
+    name: "SCRIPT RESBOT FIXED",
+    desc: "Script cocok untuk jaga grup.",
+    link: "https://www.mediafire.com/file/fge5s9mku14t6f3/RESBOT_FIXED_27.tar.gz/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 1800
   },
   {
     name: "SCRIPT BUG ANDRI",
@@ -158,29 +194,47 @@ searchInput.addEventListener("input", function() {
 // Initialize
 tampilkan(scripts);
 
-// ===== VIDEO CONTROL =====
+// ===== VIDEO & AUDIO CONTROL =====
 const video = document.getElementById("bgVideo");
+const audio = document.getElementById("bgAudio");
 const soundBtn = document.getElementById("soundToggle");
 const videoBtn = document.getElementById("videoToggle");
 
-// Auto play dengan interaksi pertama
-document.addEventListener("click", () => {
-  video.play().catch(e => console.log("Autoplay prevented"));
-}, { once: true });
+let audioInitialized = false;
+let isPlaying = false;
 
-video.muted = true;
-video.volume = 1;
+// Inisialisasi audio setelah interaksi user (browser policy)
+function initAudio() {
+  if (!audioInitialized) {
+    audio.volume = 0.5; // Volume 50%
+    audioInitialized = true;
+  }
+}
 
-// Toggle Sound
+// Toggle Sound (Audio Terpisah)
 function toggleSound() {
-  if(video.muted) {
-    video.muted = false;
-    soundBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-    soundBtn.style.background = "linear-gradient(135deg, #00ff88, #00cc66)";
+  initAudio();
+  
+  if (!isPlaying) {
+    // Play audio
+    audio.play().then(() => {
+      isPlaying = true;
+      soundBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+      soundBtn.style.background = "linear-gradient(135deg, #00ff88, #00cc66)";
+      soundBtn.title = "Mute Sound";
+      console.log("Audio started playing");
+    }).catch(err => {
+      console.log("Audio play failed:", err);
+      alert("Klik lagi untuk mengaktifkan audio (browser policy memerlukan interaksi user)");
+    });
   } else {
-    video.muted = true;
+    // Pause audio
+    audio.pause();
+    isPlaying = false;
     soundBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
     soundBtn.style.background = "linear-gradient(135deg, #7b2ff7, #f107a3)";
+    soundBtn.title = "Unmute Sound";
+    console.log("Audio paused");
   }
 }
 
