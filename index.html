@@ -240,6 +240,135 @@ nav a:hover {
   color: #888;
 }
 
+/* SUPPORT SECTION - DIPINDAHKAN KE ATAS */
+.support {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.support-title {
+  color: var(--accent);
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.support-sub {
+  color: #888;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.qris-box {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid var(--accent);
+  max-width: 380px;
+  margin: 0 auto 50px;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+  transition: all 0.3s ease;
+}
+
+.qris-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
+}
+
+.qris-box h3 {
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.qris-box img {
+  width: 250px;
+  margin: 20px 0;
+  border-radius: 15px;
+  border: 3px solid rgba(0, 255, 136, 0.3);
+}
+
+.qris-box p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.qris-box small {
+  color: #666;
+  font-size: 12px;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.support-card {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  transition: all 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+}
+
+.icon-green {
+  font-size: 40px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.support-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.support-card p {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.donasi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, var(--accent), #00cc66);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+.donasi-btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5);
+}
+
 /* SEARCH */
 .search-box {
   position: relative;
@@ -379,6 +508,8 @@ nav a:hover {
 .badge.cpanel { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
 .badge.store { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
 .badge.apk { background: linear-gradient(135deg, #3ddc84 0%, #2a9d8f 100%); }
+.badge.jpm { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); }
+.badge.telegram { background: linear-gradient(135deg, #0088cc 0%, #005580 100%); }
 
 /* META INFO - NODE & FEATURES */
 .script-meta {
@@ -458,130 +589,151 @@ nav a:hover {
   box-shadow: 0 10px 30px rgba(123, 47, 247, 0.5);
 }
 
-/* SUPPORT SECTION */
-.support {
+/* KOMUNITAS SECTION */
+.komunitas {
   text-align: center;
   padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.support-title {
-  color: var(--accent);
-  font-size: 32px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.support-sub {
-  color: #888;
-  margin-bottom: 40px;
-  font-size: 16px;
-}
-
-.qris-box {
-  background: rgba(20, 20, 20, 0.9);
-  padding: 30px;
-  border-radius: 20px;
-  border: 2px solid var(--accent);
-  max-width: 380px;
-  margin: 0 auto 50px;
-  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
-  transition: all 0.3s ease;
-}
-
-.qris-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
-}
-
-.qris-box h3 {
-  color: var(--accent);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.qris-box img {
-  width: 250px;
-  margin: 20px 0;
-  border-radius: 15px;
-  border: 3px solid rgba(0, 255, 136, 0.3);
-}
-
-.qris-box p {
-  color: #ccc;
-  margin-bottom: 10px;
-}
-
-.qris-box small {
-  color: #666;
-  font-size: 12px;
-}
-
-.support-grid {
+.komunitas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
-  max-width: 900px;
-  margin: 0 auto 50px;
+  max-width: 1000px;
+  margin: 40px auto;
   padding: 0 20px;
 }
 
-.support-card {
+.komunitas-card {
   background: rgba(20, 20, 20, 0.9);
-  padding: 35px 25px;
+  padding: 35px 30px;
   border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
-  border: 1px solid rgba(0, 255, 136, 0.2);
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.2);
+  border: 1px solid rgba(123, 47, 247, 0.2);
   transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
-.support-card:hover {
+.komunitas-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.komunitas-card:hover::before {
+  left: 100%;
+}
+
+.komunitas-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+  box-shadow: 0 15px 40px rgba(123, 47, 247, 0.4);
+  border-color: rgba(123, 47, 247, 0.5);
 }
 
-.icon-green {
-  font-size: 40px;
-  color: var(--accent);
+.komunitas-card.telegram {
+  border-color: rgba(0, 136, 204, 0.3);
+  box-shadow: 0 0 20px rgba(0, 136, 204, 0.2);
+}
+
+.komunitas-card.telegram:hover {
+  box-shadow: 0 15px 40px rgba(0, 136, 204, 0.4);
+  border-color: rgba(0, 136, 204, 0.5);
+}
+
+.komunitas-card.whatsapp-group {
+  border-color: rgba(37, 211, 102, 0.3);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
+}
+
+.komunitas-card.whatsapp-group:hover {
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+  border-color: rgba(37, 211, 102, 0.5);
+}
+
+.komunitas-card.whatsapp-channel {
+  border-color: rgba(0, 168, 132, 0.3);
+  box-shadow: 0 0 20px rgba(0, 168, 132, 0.2);
+}
+
+.komunitas-card.whatsapp-channel:hover {
+  box-shadow: 0 15px 40px rgba(0, 168, 132, 0.4);
+  border-color: rgba(0, 168, 132, 0.5);
+}
+
+.icon-komunitas {
+  font-size: 50px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.komunitas-card.telegram .icon-komunitas {
+  color: #0088cc;
+}
+
+.komunitas-card.whatsapp-group .icon-komunitas {
+  color: #25d366;
+}
+
+.komunitas-card.whatsapp-channel .icon-komunitas {
+  color: #00a884;
+}
+
+.komunitas-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.komunitas-card p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
   margin-bottom: 15px;
 }
 
-.support-card h3 {
-  color: #fff;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.support-card p {
-  color: #888;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.donasi-btn {
+.join-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 18px 40px;
-  border-radius: 30px;
-  background: linear-gradient(45deg, var(--accent), #00cc66);
-  color: #000;
-  font-weight: 700;
-  text-decoration: none;
+  gap: 8px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
   transition: all 0.3s ease;
-  font-size: 16px;
-  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+  margin-top: 10px;
 }
 
-.donasi-btn:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5);
+.komunitas-card.telegram .join-btn {
+  background: linear-gradient(45deg, #0088cc, #005580);
+  color: white;
+}
+
+.komunitas-card.whatsapp-group .join-btn {
+  background: linear-gradient(45deg, #25d366, #128c7e);
+  color: white;
+}
+
+.komunitas-card.whatsapp-channel .join-btn {
+  background: linear-gradient(45deg, #00a884, #075e54);
+  color: white;
+}
+
+.join-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 /* CONTACT */
@@ -731,6 +883,7 @@ footer p {
   .support-title { font-size: 24px; }
   .script-icon { font-size: 28px; }
   .script-meta { flex-direction: column; gap: 5px; }
+  .komunitas-grid { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -779,8 +932,9 @@ if(window.top !== window.self) {
 
   <nav>
     <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
-    <a href="#scripts"><i class="fas fa-code"></i> Scripts</a>
     <a href="#support"><i class="fas fa-heart"></i> Donasi</a>
+    <a href="#scripts"><i class="fas fa-code"></i> Scripts</a>
+    <a href="#komunitas"><i class="fas fa-users"></i> Komunitas</a>
     <a href="#kontak"><i class="fas fa-address-card"></i> Kontak</a>
   </nav>
 </header>
@@ -790,7 +944,7 @@ if(window.top !== window.self) {
   <p>Tempat download script WhatsApp Bot, tools, dan aplikasi terbaik. Gratis dan berkualitas!</p>
 </section>
 
-<!-- SUPPORT OWNER -->
+<!-- SUPPORT OWNER - DIPINDAHKAN KE ATAS -->
 <section id="support" class="support">
   <h2 class="support-title"><i class="fas fa-hand-holding-heart"></i> SUPPORT OWNER</h2>
   <p class="support-sub">Bantu server tetap hidup dengan berdonasi seikhlasnya.</p>
@@ -836,13 +990,48 @@ if(window.top !== window.self) {
     <button onclick="filterCategory('all')" class="active"><i class="fas fa-th-large"></i> Semua</button>
     <button onclick="filterCategory('group')"><i class="fas fa-users"></i> Jaga Group</button>
     <button onclick="filterCategory('bug')"><i class="fas fa-bug"></i> Bug</button>
-    <button onclick="filterCategory('cpanel')"><i class="fas fa-cpanel"></i> cPanel</button>
+    <button onclick="filterCategory('cpanel')"><i class="fas fa-server"></i> cPanel</button>
     <button onclick="filterCategory('store')"><i class="fas fa-store"></i> Store</button>
     <button onclick="filterCategory('apk')"><i class="fab fa-android"></i> APK</button>    
+    <button onclick="filterCategory('jpm')"><i class="fas fa-comments-dollar"></i> JPM</button>    
+    <button onclick="filterCategory('telegram')"><i class="fab fa-telegram"></i> Telegram</button>    
   </div>
 
   <div id="scriptList" class="script-list"></div>
-  
+</section>
+
+<!-- KOMUNITAS SECTION -->
+<section id="komunitas" class="komunitas">
+  <div class="section-header">
+    <h2><i class="fas fa-users"></i> Komunitas Resmi</h2>
+    <p>Bergabung dengan komunitas kami untuk update terbaru dan diskusi</p>
+  </div>
+
+  <div class="komunitas-grid">
+    <!-- Grup Telegram -->
+    <a href="https://t.me/yudastore_group" target="_blank" class="komunitas-card telegram">
+      <i class="fab fa-telegram icon-komunitas"></i>
+      <h3>Grup Telegram</h3>
+      <p>Join grup Telegram untuk diskusi, sharing script, dan update terbaru dari YUDA STORE.</p>
+      <span class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Grup</span>
+    </a>
+
+    <!-- Grup WhatsApp -->
+    <a href="https://chat.whatsapp.com/FN4YYELSQ2N1yYMD9vNcpo?mode=gi_t" target="_blank" class="komunitas-card whatsapp-group">
+      <i class="fab fa-whatsapp icon-komunitas"></i>
+      <h3>Grup WhatsApp</h3>
+      <p>Bergabung dengan grup WhatsApp untuk support, tanya jawab, dan sharing bersama member lain.</p>
+      <span class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Grup</span>
+    </a>
+
+    <!-- Saluran WhatsApp -->
+    <a href="https://whatsapp.com/channel/0029VbCgnIwAzNbsIRshju38" target="_blank" class="komunitas-card whatsapp-channel">
+      <i class="fab fa-whatsapp icon-komunitas"></i>
+      <h3>Saluran WhatsApp</h3>
+      <p>Follow saluran WhatsApp untuk mendapatkan update script terbaru dan informasi penting.</p>
+      <span class="join-btn"><i class="fas fa-bell"></i> Follow Channel</span>
+    </a>
+  </div>
 </section>
 
 <!-- KONTAK OWNER -->

@@ -13,6 +13,33 @@ const scripts = [
     features: 2800
   },
   {
+    name: "SCRIPT ENCORE MB",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/g3pes2oyt2mweui/Script+Encore+Md+V3.1.0+Update+Via+Wa.zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 3000
+  },
+  {
+    name: "SCRIPT CANTARELLA V3",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/6yu9518kzitoj6p/Cantarella_V3.zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 1000
+  },
+  {
+    name: "SCRIPT MARIN KITAGAWA V3",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/5vw10nl5ckv1mpb/Marin+Kitagawa+V3.zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 1700
+  },
+  {
     name: "SCRIPT MIWA ASISTEN",
     desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
     link: "https://www.mediafire.com/file/0m5fjre0c6a4rj0/miwa_v1.zip/file",
@@ -47,6 +74,15 @@ const scripts = [
     icon: "📡",
     nodeVersion: "0",
     features: 150
+  },
+  {
+    name: "SCRIPT VENTUS",
+    desc: "Script cocok untuk yang sering rip/nipu, tapi di gunakqn yang baik.",
+    link: "https://www.mediafire.com/file/ah9jmlmzyeqqmjv/ventus.zip/file",
+    category: "bug",
+    icon: "🐛",
+    nodeVersion: "v21",
+    features: 500
   },
   {
     name: "SCRIPT OTAX",
@@ -128,6 +164,25 @@ const scripts = [
     icon: "🐛",
     nodeVersion: "v18.x",
     features: 120
+  },
+  // ====== TAMBAHAN SCRIPT JPM ======
+  {
+    name: "JPM AUTO REPLY V2",
+    desc: "Script JPM (Jual Pulsa Manual) dengan auto reply dan manajemen order otomatis.",
+    link: "https://www.mediafire.com/file/jpm_auto_reply_v2.zip/file",
+    category: "jpm",
+    icon: "💬",
+    nodeVersion: "v18",
+    features: 45
+  },
+  {
+    name: "JPM PANEL OTOMATIS",
+    desc: "Script JPM dengan sistem panel otomatis, cocok untuk jualan pulsa dan kuota.",
+    link: "https://www.mediafire.com/file/jpm_panel_otomatis.zip/file",
+    category: "jpm",
+    icon: "📱",
+    nodeVersion: "v20",
+    features: 80
   }
 ];
 
@@ -168,15 +223,19 @@ function tampilkan(data) {
   });
 }
 
+// PERBAIKAN: Fungsi filter untuk menangani semua kategori termasuk apk dan jpm
 function filterCategory(cat) {
   const buttons = document.querySelectorAll(".filter-buttons button");
   buttons.forEach((btn, index) => {
     btn.classList.remove("active");
+    // Index mapping: 0=all, 1=group, 2=bug, 3=cpanel, 4=store, 5=apk, 6=jpm
     if (cat === 'all' && index === 0) btn.classList.add("active");
     else if (cat === 'group' && index === 1) btn.classList.add("active");
     else if (cat === 'bug' && index === 2) btn.classList.add("active");
     else if (cat === 'cpanel' && index === 3) btn.classList.add("active");
     else if (cat === 'store' && index === 4) btn.classList.add("active");
+    else if (cat === 'apk' && index === 5) btn.classList.add("active");
+    else if (cat === 'jpm' && index === 6) btn.classList.add("active");
   });
 
   if (cat === "all") {
