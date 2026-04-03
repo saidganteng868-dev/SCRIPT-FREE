@@ -4,9 +4,54 @@
 
 const scripts = [
   {
+    name: "SCRIPT MUKASA",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/dfsyopw0m2s0hhs/𝐌𝐈𝐊𝐀𝐒𝐀+𝐌𝐃+𝐕6.1🌷+[𝐍𝐎+𝐄𝐍𝐂].zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 1800
+  },
+  {
+    name: "SCRIPT CHRISTY",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/3d8y2ou59rxxsrk/CHRISTY+(+CREDIT+JAN+DIHAPUS+).zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20 - V24",
+    features: 2800
+  },
+  {
+    name: "SCRIPT ELAINA MB ",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/j07drkt03kem3z0/Elaina+MD.zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v21 - V23",
+    features: 2800
+  },
+  {
     name: "SCRIPT HUTAO MB V3",
     desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
     link: "https://www.mediafire.com/file/nprkdlutbig072t/ʜᴜᴛᴀᴏ+-+ᴍᴅ+-+v3.zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 2800
+  },
+  {
+    name: "SCRIPT ANNAYAMADA MD",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/r6jvjljco7i1o31/ANNAYAMADA-MD+TERBARU+DENGAN+FITUR+2000+.zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 2000
+  },
+  {
+    name: "SCRIPT HYDRO MB V5",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/h7hbcyrbs8di182/hydromd-master.zip/file",
     category: "group",
     icon: "🤖",
     nodeVersion: "v20",
@@ -65,6 +110,15 @@ const scripts = [
     icon: "🤖",
     nodeVersion: "v20 - v27",
     features: 1898
+  },
+  {
+    name: "SCRIPT ALYA CHAN",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil.",
+    link: "https://www.mediafire.com/file/nprkdlutbig072t/ʜᴜᴛᴀᴏ+-+ᴍᴅ+-+v3.zip/file",
+    category: "group",
+    icon: "🤖",
+    nodeVersion: "v20",
+    features: 1837
   },
   {
     name: "APK PAXBAR V2",
@@ -183,6 +237,15 @@ const scripts = [
     icon: "📱",
     nodeVersion: "v20",
     features: 80
+  },
+  {
+    name: "SCRIPT PUSH KONTAK",
+    desc: "Script untuk push kontak otomatis ke banyak nomor dengan fitur delay dan anti banned.",
+    link: "https://www.mediafire.com/file/r7gi86t2t6zy2je/Pushkontak+Save+Otomatis.zip/file",
+    category: "pushkontak",
+    icon: "📇",
+    nodeVersion: "v20",
+    features: 15
   }
 ];
 
@@ -228,7 +291,6 @@ function filterCategory(cat) {
   const buttons = document.querySelectorAll(".filter-buttons button");
   buttons.forEach((btn, index) => {
     btn.classList.remove("active");
-    // Index mapping: 0=all, 1=group, 2=bug, 3=cpanel, 4=store, 5=apk, 6=jpm
     if (cat === 'all' && index === 0) btn.classList.add("active");
     else if (cat === 'group' && index === 1) btn.classList.add("active");
     else if (cat === 'bug' && index === 2) btn.classList.add("active");
@@ -236,6 +298,8 @@ function filterCategory(cat) {
     else if (cat === 'store' && index === 4) btn.classList.add("active");
     else if (cat === 'apk' && index === 5) btn.classList.add("active");
     else if (cat === 'jpm' && index === 6) btn.classList.add("active");
+    else if (cat === 'telegram' && index === 7) btn.classList.add("active");
+    else if (cat === 'pushkontak' && index === 8) btn.classList.add("active"); // TAMBAHKAN INI
   });
 
   if (cat === "all") {
@@ -244,6 +308,7 @@ function filterCategory(cat) {
     tampilkan(scripts.filter(s => s.category === cat));
   }
 }
+
 
 searchInput.addEventListener("input", function() {
   const value = this.value.toLowerCase();
