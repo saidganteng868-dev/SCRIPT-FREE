@@ -5,1082 +5,1638 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YUDA STORE</title>
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-<!-- Open Graph Meta Tags untuk Share Link -->
-<meta property="og:title" content="YUDA STORE - Script WhatsApp & Tools Premium">
-<meta property="og:description" content="Kumpulan script WhatsApp Bot, Bug, cPanel, dan Store berkualitas. Download gratis dan support 24/7!">
+<meta name="description" content="Premium WhatsApp Bot Scripts, Bug Tools, cPanel & Store. High quality, fully featured, and professional.">
+<meta name="keywords" content="WhatsApp Bot, Script Premium, Bug Tools, cPanel, JPM, Push Kontak">
+<meta name="author" content="YUDA DEV">
+
+<meta property="og:title" content="YUDA STORE - Premium Script Collection">
+<meta property="og:description" content="Koleksi script WhatsApp Bot , tools, dan aplikasi berkualitas tinggi. Download sekarang!">
 <meta property="og:image" content="https://script-free-khaki.vercel.app/Yuda.png">
 <meta property="og:url" content="https://script-free-khaki.vercel.app">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="YUDA STORE">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="YUDA STORE - Script WhatsApp & Tools Premium">
-<meta name="twitter:description" content="Kumpulan script WhatsApp Bot, Bug, cPanel, dan Store berkualitas. Download gratis!">
-<meta name="twitter:image" content="https://script-free-khaki.vercel.app/Yuda.png">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #ec4899;
+  --accent: #10b981;
+  --accent-glow: rgba(16, 185, 129, 0.3);
+  --wa-color: #25d366;
+  --wa-glow: rgba(37, 211, 102, 0.3);
+  --tele-color: #0088cc;
+  --tele-glow: rgba(0, 136, 204, 0.3);
+  --dark: #0f0f1a;
+  --darker: #08080f;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+  --glow-primary: 0 0 40px rgba(99, 102, 241, 0.4);
+  --glow-secondary: 0 0 40px rgba(236, 72, 153, 0.4);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
-input, textarea {
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-}
-
-:root {
-  --primary: #7b2ff7;
-  --secondary: #f107a3;
-  --accent: #00ff88;
-  --dark: #0a0a0a;
-  --glass: rgba(255, 255, 255, 0.05);
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: white;
+  font-family: 'Outfit', sans-serif;
+  background: var(--darker);
+  color: var(--text-primary);
   overflow-x: hidden;
-  background: var(--dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* VIDEO BACKGROUND */
-#bgVideo {
+/* Animated Background */
+.bg-animation {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 70%),
+    var(--darker);
+}
+
+.bg-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -2;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
 }
 
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* Floating Orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.4;
+  animation: float 20s infinite ease-in-out;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--primary);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--secondary);
+  bottom: -50px;
+  right: -50px;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: var(--accent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* Glass Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
+  background: rgba(8, 8, 15, 0.7);
+  backdrop-filter: blur(20px);
   z-index: -1;
 }
 
-.video-controls {
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Video & Audio Controls */
+.media-controls {
   position: fixed;
-  right: 25px;
+  right: 30px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 15px;
-  z-index: 999;
+  z-index: 1000;
 }
 
-.video-controls button {
+.media-btn {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: none;
-  font-size: 18px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  color: var(--text-primary);
   cursor: pointer;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  box-shadow: 0 0 20px rgba(123, 47, 247, 0.5);
-  transition: all 0.3s ease;
+  transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.video-controls button:hover {
-  transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 0 30px rgba(123, 47, 247, 0.8);
-}
-
-/* HEADER */
-header {
-  padding: 25px 20px;
-  text-align: center;
+  font-size: 18px;
   position: relative;
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.media-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.media-btn:hover::before {
+  opacity: 1;
+}
+
+.media-btn:hover {
+  border-color: transparent;
+  transform: scale(1.1);
+  box-shadow: var(--glow-primary);
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 20px 50px;
+  background: rgba(15, 15, 26, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+header.scrolled {
+  padding: 15px 50px;
+  background: rgba(8, 8, 15, 0.95);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 15px;
-  margin-bottom: 15px;
 }
 
-.icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  box-shadow: 0 0 30px rgba(123, 47, 247, 0.6);
+  font-size: 20px;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-icon::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.logo-text h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.logo-text span {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-primary);
+}
+
+.nav-link:hover::before, .nav-link.active::before {
+  width: 80%;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 80px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 900px;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 30px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero-badge i {
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 30px rgba(123, 47, 247, 0.6); }
-  50% { box-shadow: 0 0 50px rgba(123, 47, 247, 0.9); }
-}
-
-header h1 {
-  font-size: 28px;
-  background: linear-gradient(45deg, #b16cea, #ff5edf);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-}
-
-header p {
-  font-size: 12px;
-  color: #aaa;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-nav {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-nav a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 30px;
-  background: var(--glass);
-  color: #ccc;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 14px;
-}
-
-nav a.active,
-nav a:hover {
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  color: white;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(123, 47, 247, 0.4);
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 60px 20px 40px;
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .hero h2 {
-  font-size: 42px;
-  margin-bottom: 15px;
-  background: linear-gradient(45deg, #fff, #b16cea);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 0%, #818cf8 50%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
+  animation: fadeInUp 0.8s ease 0.1s both;
 }
 
 .hero p {
-  color: #aaa;
-  font-size: 16px;
+  font-size: 20px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.btn {
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.5);
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  max-width: 800px;
+  margin: -50px auto 0;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Section Styles */
+section {
+  padding: 100px 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.section-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 18px;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* SECTION HEADER */
-.section-header {
-  text-align: center;
-  padding: 40px 20px 20px;
+/* Support Section */
+.support-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 80px;
+  margin: 0 auto 100px;
+  position: relative;
+  overflow: hidden;
 }
 
-.section-header h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  background: linear-gradient(45deg, #fff, #b16cea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-header p {
-  color: #888;
-}
-
-/* SUPPORT SECTION - DIPINDAHKAN KE ATAS */
-.support {
-  text-align: center;
-  padding: 60px 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.support-title {
-  color: var(--accent);
-  font-size: 32px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.support-sub {
-  color: #888;
-  margin-bottom: 40px;
-  font-size: 16px;
-}
-
-.qris-box {
-  background: rgba(20, 20, 20, 0.9);
-  padding: 30px;
-  border-radius: 20px;
-  border: 2px solid var(--accent);
-  max-width: 380px;
-  margin: 0 auto 50px;
-  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
-  transition: all 0.3s ease;
-}
-
-.qris-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
-}
-
-.qris-box h3 {
-  color: var(--accent);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.qris-box img {
-  width: 250px;
-  margin: 20px 0;
-  border-radius: 15px;
-  border: 3px solid rgba(0, 255, 136, 0.3);
-}
-
-.qris-box p {
-  color: #ccc;
-  margin-bottom: 10px;
-}
-
-.qris-box small {
-  color: #666;
-  font-size: 12px;
+.support-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .support-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 900px;
-  margin: 0 auto 50px;
-  padding: 0 20px;
-}
-
-.support-card {
-  background: rgba(20, 20, 20, 0.9);
-  padding: 35px 25px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
-  border: 1px solid rgba(0, 255, 136, 0.2);
-  transition: all 0.3s ease;
-}
-
-.support-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
-}
-
-.icon-green {
-  font-size: 40px;
-  color: var(--accent);
-  margin-bottom: 15px;
-}
-
-.support-card h3 {
-  color: #fff;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.support-card p {
-  color: #888;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.donasi-btn {
-  display: inline-flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
   align-items: center;
-  gap: 10px;
-  padding: 18px 40px;
-  border-radius: 30px;
-  background: linear-gradient(45deg, var(--accent), #00cc66);
-  color: #000;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s ease;
+}
+
+.qris-container {
+  text-align: center;
+}
+
+.qris-frame {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--accent);
+  border-radius: 20px;
+  padding: 30px;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 0 40px var(--accent-glow);
+}
+
+.qris-frame::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--accent), transparent, var(--accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.qris-frame img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+.support-info h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.support-info p {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
   font-size: 16px;
-  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+  line-height: 1.8;
 }
 
-.donasi-btn:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.5);
+.support-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
-/* SEARCH */
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.feature-item i {
+  width: 40px;
+  height: 40px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+/* Search & Filter */
+.controls-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+}
+
 .search-box {
   position: relative;
-  max-width: 500px;
-  margin: 0 auto 30px;
+  margin-bottom: 25px;
 }
 
 .search-box input {
   width: 100%;
-  padding: 15px 20px 15px 50px;
-  border-radius: 30px;
-  border: 2px solid rgba(123, 47, 247, 0.5);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 15px;
-  transition: all 0.3s ease;
+  padding: 18px 25px 18px 55px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-primary);
+  font-size: 16px;
+  font-family: inherit;
+  transition: var(--transition);
 }
 
 .search-box input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 20px rgba(123, 47, 247, 0.3);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
 }
 
-.search-icon {
+.search-box i {
   position: absolute;
-  left: 20px;
+  left: 22px;
   top: 50%;
   transform: translateY(-50%);
-  color: #888;
+  color: var(--text-secondary);
+  font-size: 18px;
 }
 
-/* FILTER */
 .filter-buttons {
-  margin-bottom: 40px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 0 20px;
+  justify-content: center;
 }
 
-.filter-buttons button {
+.filter-btn {
   padding: 12px 24px;
   border-radius: 25px;
-  border: none;
-  background: var(--glass);
-  color: #ccc;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
   font-size: 14px;
-  display: inline-flex;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: inherit;
 }
 
-.filter-buttons button.active,
-.filter-buttons button:hover {
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
+.filter-btn:hover, .filter-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
+  border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(123, 47, 247, 0.4);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
 }
 
-/* SCRIPT LIST */
-.script-list {
+/* Script Grid */
+.script-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: 25px;
-  padding: 0 20px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .script-card {
-  background: rgba(20, 20, 20, 0.9);
-  padding: 25px;
-  border-radius: 20px;
-  text-align: left;
-  box-shadow: 0 0 20px rgba(123, 47, 247, 0.2);
-  border: 1px solid rgba(123, 47, 247, 0.2);
-  transition: all 0.3s ease;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 30px;
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .script-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.5s;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
 
 .script-card:hover::before {
-  left: 100%;
+  transform: scaleX(1);
 }
 
 .script-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 40px rgba(123, 47, 247, 0.4);
-  border-color: rgba(123, 47, 247, 0.5);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* ICON DI KANAN ATAS */
-.script-header {
+.card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.script-icon {
-  font-size: 36px;
-  line-height: 1;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+.category-badge {
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.badge.group { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-.badge.bug { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-.badge.cpanel { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-.badge.store { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
-.badge.apk { background: linear-gradient(135deg, #3ddc84 0%, #2a9d8f 100%); }
-.badge.jpm { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); }
-.badge.telegram { background: linear-gradient(135deg, #0088cc 0%, #005580 100%); }
-.badge.pushkontak { background: linear-gradient(135deg, #ff9f43 0%, #ee5a6f 100%); }
+.badge-group { background: var(--gradient-1); }
+.badge-bug { background: var(--gradient-2); }
+.badge-cpanel { background: var(--gradient-3); }
+.badge-store { background: var(--gradient-4); }
+.badge-apk { background: var(--gradient-5); }
+.badge-jpm { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+.badge-telegram { background: linear-gradient(135deg, #0088cc, #005580); }
+.badge-pushkontak { background: linear-gradient(135deg, #ff9f43, #ee5a6f); }
 
-/* META INFO - NODE & FEATURES */
-.script-meta {
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.node-version {
-  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 15px;
-  background: rgba(83, 158, 67, 0.2);
-  color: #539e43;
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid rgba(83, 158, 67, 0.3);
+  justify-content: center;
+  font-size: 24px;
 }
 
-.features-count {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 15px;
-  background: rgba(255, 193, 7, 0.2);
-  color: #ffc107;
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid rgba(255, 193, 7, 0.3);
-}
-
-.node-version i,
-.features-count i {
-  font-size: 14px;
-}
-
+/* Platform Label di Nama Script */
 .script-title {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 10px;
-  color: #fff;
-  padding-right: 50px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  line-height: 1.4;
 }
 
-.script-desc {
+.platform-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.platform-label.wa {
+  background: rgba(37, 211, 102, 0.2);
+  color: var(--wa-color);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+}
+
+.platform-label.tele {
+  background: rgba(0, 136, 204, 0.2);
+  color: var(--tele-color);
+  border: 1px solid rgba(0, 136, 204, 0.4);
+}
+
+.script-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.meta-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.meta-tag i {
   font-size: 14px;
-  color: #aaa;
-  margin-bottom: 20px;
-  line-height: 1.6;
+}
+
+.meta-tag.node { color: #539e43; border-color: rgba(83, 158, 67, 0.3); }
+.meta-tag.features { color: #ffc107; border-color: rgba(255, 193, 7, 0.3); }
+
+.script-desc {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  flex-grow: 1;
 }
 
 .download-btn {
   width: 100%;
-  padding: 14px;
-  border: none;
+  padding: 16px;
   border-radius: 12px;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border: none;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 15px;
   font-weight: 600;
-  display: inline-flex;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 14px;
-}
-
-.download-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 30px rgba(123, 47, 247, 0.5);
-}
-
-/* KOMUNITAS SECTION */
-.komunitas {
-  text-align: center;
-  padding: 60px 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.komunitas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.komunitas-card {
-  background: rgba(20, 20, 20, 0.9);
-  padding: 35px 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(123, 47, 247, 0.2);
-  border: 1px solid rgba(123, 47, 247, 0.2);
-  transition: all 0.3s ease;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  display: block;
+  gap: 10px;
+  font-family: inherit;
   position: relative;
   overflow: hidden;
 }
 
-.komunitas-card::before {
+.download-btn::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
 }
 
-.komunitas-card:hover::before {
+.download-btn:hover::before {
   left: 100%;
 }
 
-.komunitas-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(123, 47, 247, 0.4);
-  border-color: rgba(123, 47, 247, 0.5);
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
 }
 
-.komunitas-card.telegram {
-  border-color: rgba(0, 136, 204, 0.3);
-  box-shadow: 0 0 20px rgba(0, 136, 204, 0.2);
+/* Community Section */
+.community-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 80px;
+  margin-bottom: 100px;
 }
 
-.komunitas-card.telegram:hover {
-  box-shadow: 0 15px 40px rgba(0, 136, 204, 0.4);
-  border-color: rgba(0, 136, 204, 0.5);
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.komunitas-card.whatsapp-group {
-  border-color: rgba(37, 211, 102, 0.3);
-  box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
+.community-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 
-.komunitas-card.whatsapp-group:hover {
-  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-  border-color: rgba(37, 211, 102, 0.5);
+.community-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.05));
+  opacity: 0;
+  transition: var(--transition);
 }
 
-.komunitas-card.whatsapp-channel {
-  border-color: rgba(0, 168, 132, 0.3);
-  box-shadow: 0 0 20px rgba(0, 168, 132, 0.2);
+.community-card:hover::before {
+  opacity: 1;
 }
 
-.komunitas-card.whatsapp-channel:hover {
-  box-shadow: 0 15px 40px rgba(0, 168, 132, 0.4);
-  border-color: rgba(0, 168, 132, 0.5);
+.community-card.telegram:hover {
+  border-color: #0088cc;
+  box-shadow: 0 0 40px rgba(0, 136, 204, 0.2);
 }
 
-.icon-komunitas {
-  font-size: 50px;
-  margin-bottom: 15px;
-  display: block;
+.community-card.whatsapp:hover {
+  border-color: #25d366;
+  box-shadow: 0 0 40px rgba(37, 211, 102, 0.2);
 }
 
-.komunitas-card.telegram .icon-komunitas {
+.community-card.channel:hover {
+  border-color: #00a884;
+  box-shadow: 0 0 40px rgba(0, 168, 132, 0.2);
+}
+
+.community-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  margin: 0 auto 25px;
+  position: relative;
+}
+
+.telegram .community-icon {
+  background: rgba(0, 136, 204, 0.1);
   color: #0088cc;
 }
 
-.komunitas-card.whatsapp-group .icon-komunitas {
+.whatsapp .community-icon {
+  background: rgba(37, 211, 102, 0.1);
   color: #25d366;
 }
 
-.komunitas-card.whatsapp-channel .icon-komunitas {
+.channel .community-icon {
+  background: rgba(0, 168, 132, 0.1);
   color: #00a884;
 }
 
-.komunitas-card h3 {
-  color: #fff;
-  margin-bottom: 10px;
+.community-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 22px;
+  margin-bottom: 10px;
 }
 
-.komunitas-card p {
-  color: #aaa;
+.community-card p {
+  color: var(--text-secondary);
   font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  line-height: 1.7;
+  margin-bottom: 25px;
 }
 
 .join-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 30px;
+  padding: 12px 28px;
   border-radius: 25px;
-  font-weight: 600;
   font-size: 14px;
-  transition: all 0.3s ease;
-  margin-top: 10px;
+  font-weight: 600;
+  transition: var(--transition);
 }
 
-.komunitas-card.telegram .join-btn {
-  background: linear-gradient(45deg, #0088cc, #005580);
+.telegram .join-btn {
+  background: #0088cc;
   color: white;
 }
 
-.komunitas-card.whatsapp-group .join-btn {
-  background: linear-gradient(45deg, #25d366, #128c7e);
+.whatsapp .join-btn {
+  background: #25d366;
   color: white;
 }
 
-.komunitas-card.whatsapp-channel .join-btn {
-  background: linear-gradient(45deg, #00a884, #075e54);
+.channel .join-btn {
+  background: #00a884;
   color: white;
 }
 
-.join-btn:hover {
+.community-card:hover .join-btn {
   transform: scale(1.05);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* CONTACT */
-.contact {
-  text-align: center;
-  padding: 60px 20px;
-}
-
+/* Contact Section */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .contact-card {
-  background: rgba(20, 20, 20, 0.9);
-  padding: 35px 30px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(123, 47, 247, 0.2);
-  border: 1px solid rgba(123, 47, 247, 0.2);
-  transition: all 0.3s ease;
+  padding: 40px;
   text-align: center;
+  transition: var(--transition);
 }
 
 .contact-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(123, 47, 247, 0.4);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.icon-purple {
-  font-size: 40px;
-  color: #b16cea;
-  margin-bottom: 15px;
+.contact-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 25px;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
 }
 
 .contact-card h3 {
-  color: #fff;
-  margin-bottom: 10px;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .contact-card p {
-  color: #aaa;
-  margin-bottom: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  font-size: 15px;
 }
 
-.status {
-  display: inline-block;
-  padding: 5px 15px;
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 20px;
   font-size: 12px;
+  color: var(--accent);
   font-weight: 600;
 }
 
-.status.online {
-  background: rgba(0, 255, 136, 0.2);
-  color: var(--accent);
+.status-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 .contact-btn {
-  display: inline-block;
-  padding: 10px 25px;
-  border-radius: 20px;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   text-decoration: none;
+  border-radius: 25px;
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .contact-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 20px rgba(123, 47, 247, 0.4);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
 }
 
-/* FOOTER */
+/* Footer */
 footer {
-  text-align: center;
-  padding: 40px 20px;
-  background: rgba(0, 0, 0, 0.8);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 40px;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border);
+  padding: 60px 50px 30px;
+  margin-top: 100px;
 }
 
 .footer-content {
-  max-width: 800px;
+  max-width: 1400px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 50px;
 }
 
-.footer-logo {
-  font-size: 24px;
-  font-weight: 700;
-  background: linear-gradient(45deg, #b16cea, #ff5edf);
+.footer-brand h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #fff, #a5b4fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
 
-footer p {
-  color: #666;
-  margin-bottom: 20px;
+.footer-brand p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 25px;
 }
 
 .social-links {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
-.social-links a {
+.social-link {
   width: 45px;
   height: 45px;
-  border-radius: 50%;
-  background: var(--glass);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;
+  color: var(--text-secondary);
   text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  font-size: 18px;
 }
 
-.social-links a:hover {
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
+.social-link:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
+  border-color: transparent;
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(123, 47, 247, 0.4);
 }
 
-/* RESPONSIVE */
+.footer-links h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: var(--text-primary);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 30px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Empty State */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.empty-state i {
+  font-size: 64px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .support-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .support-features {
+    align-items: center;
+  }
+}
+
 @media (max-width: 768px) {
-  .hero h2 { font-size: 28px; }
-  .script-list { grid-template-columns: 1fr; }
-  .video-controls { right: 15px; }
-  .video-controls button { width: 45px; height: 45px; font-size: 16px; }
-  nav a { padding: 10px 18px; font-size: 13px; }
-  .support-title { font-size: 24px; }
-  .script-icon { font-size: 28px; }
-  .script-meta { flex-direction: column; gap: 5px; }
-  .komunitas-grid { grid-template-columns: 1fr; }
+  header {
+    padding: 15px 20px;
+  }
+  nav {
+    display: none;
+  }
+  .hero h2 {
+    font-size: 42px;
+  }
+  .stats-bar {
+    flex-direction: column;
+    gap: 30px;
+  }
+  section {
+    padding: 60px 20px;
+  }
+  .script-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .media-controls {
+    right: 15px;
+  }
+  .support-section, .community-section {
+    padding: 40px 25px;
+  }
+  .script-title {
+    font-size: 18px;
+  }
+  /* Tambahkan di dalam <style> tag */
+.meta-tag.platform {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-tag.platform.wa {
+    color: var(--wa-color);
+    border-color: rgba(37, 211, 102, 0.3);
+    background: rgba(37, 211, 102, 0.1);
+}
+
+.meta-tag.platform.tele {
+    color: var(--tele-color);
+    border-color: rgba(0, 136, 204, 0.3);
+    background: rgba(0, 136, 204, 0.1);
+}
+
 }
 </style>
-
-<!-- PROTEKSI RINGAN - Hanya Console Warning -->
-<script>
-// Console Warning saja - tidak memblokir akses user
-console.log('%c⚠️ PERINGATAN!', 'color: red; font-size: 24px; font-weight: bold;');
-console.log('%c© 2026 YUDA STORE - All Rights Reserved', 'color: #7b2ff7; font-size: 14px;');
-console.log('%cDilarang menyalin atau mencuri kode website ini.', 'color: orange; font-size: 12px;');
-
-// Anti Frame (iframe embedding) - tetap dipertahankan karena tidak mengganggu user langsung
-if(window.top !== window.self) {
-  window.top.location = window.self.location;
-}
-</script>
-
 </head>
 <body>
 
-<!-- VIDEO BACKGROUND -->
-<video id="bgVideo" autoplay loop muted playsinline>
+<div class="bg-animation"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="overlay"></div>
+
+<div class="media-controls">
+  <button class="media-btn" id="videoToggle" onclick="toggleVideo()" title="Toggle Video">
+    <i class="fas fa-video"></i>
+  </button>
+  <button class="media-btn" id="soundToggle" onclick="toggleSound()" title="Toggle Sound">
+    <i class="fas fa-volume-mute"></i>
+  </button>
+</div>
+
+<video id="bgVideo" autoplay loop muted playsinline style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -3; opacity: 0.3;">
   <source src="video.mp4" type="video/mp4">
 </video>
 
-<!-- AUDIO BACKGROUND (Terpisah dari Video) -->
 <audio id="bgAudio" loop>
   <source src="music.mp3" type="audio/mpeg">
-  <source src="music.ogg" type="audio/ogg">
 </audio>
 
-<div class="overlay"></div>
-
-<div class="video-controls">
-  <button id="videoToggle" onclick="toggleVideo()" title="Toggle Video"><i class="fas fa-video"></i></button>
-  <button id="soundToggle" onclick="toggleSound()" title="Toggle Sound"><i class="fas fa-volume-mute"></i></button>
-</div>
-
-<header>
-  <div class="logo">
-    <div class="icon"><i class="fas fa-terminal"></i></div>
-    <div>
-      <h1>YUDA STORE</h1>
-      <p>SUBSCRIBE YT YUDA DEV</p>
+<header id="header">
+  <div class="header-content">
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fas fa-terminal"></i>
+      </div>
+      <div class="logo-text">
+        <h1>YUDA STORE</h1>
+        <span>YT : -</span>
+      </div>
     </div>
+    <nav>
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#support" class="nav-link">Support</a>
+      <a href="#scripts" class="nav-link">Scripts</a>
+      <a href="#community" class="nav-link">Community</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
   </div>
-
-  <nav>
-    <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
-    <a href="#support"><i class="fas fa-heart"></i> Donasi</a>
-    <a href="#scripts"><i class="fas fa-code"></i> Scripts</a>
-    <a href="#komunitas"><i class="fas fa-users"></i> Komunitas</a>
-    <a href="#kontak"><i class="fas fa-address-card"></i> Kontak</a>
-  </nav>
 </header>
 
 <section id="home" class="hero">
-  <h2>Selamat Datang di YUDA STORE</h2>
-  <p>Tempat download script WhatsApp Bot, tools, dan aplikasi terbaik. Gratis dan berkualitas!</p>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-sparkles"></i>
+       Script Collection 2026
+    </div>
+    <h2>Script WhatsApp & Telegram Bot</h2>
+    <p>Koleksi script berkualitas tinggi untuk WhatsApp Bot, Telegram Bot, Bug Tools, cPanel, dan Store. Support 24/7 dan update berkala.</p>
+    <div class="hero-buttons">
+      <a href="#scripts" class="btn btn-primary">
+        <i class="fas fa-rocket"></i>
+        Explore Scripts
+      </a>
+      <a href="#support" class="btn btn-secondary">
+        <i class="fas fa-heart"></i>
+        Support Owner
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- SUPPORT OWNER - DIPINDAHKAN KE ATAS -->
-<section id="support" class="support">
-  <h2 class="support-title"><i class="fas fa-hand-holding-heart"></i> SUPPORT OWNER</h2>
-  <p class="support-sub">Bantu server tetap hidup dengan berdonasi seikhlasnya.</p>
-
-  <div class="qris-box">
-    <h3><i class="fas fa-qrcode"></i> QRIS / E-Wallet</h3>
-    <img src="qris.png" alt="QRIS Payment">
-    <p>Scan QR code di atas untuk donasi</p>
-    <small>Minimal Rp 1.000 juga diterima dengan senang hati!</small>
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number" id="stat-scripts">40+</div>
+    <div class="stat-label">Scripts</div>
   </div>
+  <div class="stat-item">
+    <div class="stat-number">24/7</div>
+    <div class="stat-label">Support</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Free</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">WA/TELE</div>
+    <div class="stat-label">Platform</div>
+  </div>
+</div>
 
+<section id="support" class="support-section">
   <div class="support-grid">
-    <div class="support-card">
-      <div class="icon-green"><i class="fas fa-server"></i></div>
-      <h3>Maintenance Server</h3>
-      <p>Dana donasi digunakan untuk biaya maintenance server agar script selalu online 24/7</p>
+    <div class="qris-container">
+      <div class="qris-frame">
+        <img src="qris.png" alt="QRIS Payment">
+      </div>
     </div>
-
-    <div class="support-card">
-      <div class="icon-green"><i class="fas fa-sync-alt"></i></div>
-      <h3>Update Script Terbaru</h3>
-      <p>Mendukung pengembangan dan update script terbaru dengan fitur-fitur baru</p>
+    <div class="support-info">
+      <div class="section-tag">Donasi</div>
+      <h3>Support Owner</h3>
+      <p>Bantu server tetap hidup dan development script berkelanjutan. Setiap donasi sangat berarti untuk maintenance dan update fitur terbaru.</p>
+      
+      <div class="support-features">
+        <div class="feature-item">
+          <i class="fas fa-server"></i>
+          <div>
+            <strong>Server Maintenance</strong>
+            <p style="margin: 0; font-size: 13px; color: var(--text-secondary);">Biaya hosting 24/7</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-code"></i>
+          <div>
+            <strong>Development</strong>
+            <p style="margin: 0; font-size: 13px; color: var(--text-secondary);">Update & fitur baru</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <div>
+            <strong>Security</strong>
+            <p style="margin: 0; font-size: 13px; color: var(--text-secondary);">Proteksi & bug fixes</p>
+          </div>
+        </div>
+      </div>
+      
+      <a href="https://wa.me/6285654809718?text=Hallo, Saya Sudah Donasi" target="_blank" class="btn btn-primary">
+        <i class="fab fa-whatsapp"></i>
+        Konfirmasi Donasi
+      </a>
     </div>
   </div>
-
-  <a href="https://wa.me/6285654809718?text=Hallo, Banh Saya Sudah Donasi " target="_blank" class="donasi-btn">
-    <i class="fab fa-whatsapp"></i> Konfirmasi Donasi
-  </a>
 </section>
 
-<section id="scripts" class="scripts-section">
+<section id="scripts">
   <div class="section-header">
-    <h2><i class="fas fa-code"></i> Daftar Script</h2>
-    <p>Gunakan fitur pencarian atau filter di bawah ini.</p>
+    <div class="section-tag">Katalog</div>
+    <h2>Daftar Script Bot</h2>
+    <p>Pilih script sesuai kebutuhan Anda. Semua script gratis dan siap pakai. [WA] = WhatsApp, [TELE] = Telegram</p>
   </div>
 
-  <div class="search-box">
-    <i class="fas fa-search search-icon"></i>
-    <input type="text" id="search" placeholder="Cari nama script...">
+  <div class="controls-container">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Cari script berdasarkan nama... (ketik WA atau TELE untuk filter platform)">
+    </div>
+    
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="filterCategory('all')">
+        <i class="fas fa-th-large"></i> Semua
+      </button>
+      <button class="filter-btn" onclick="filterCategory('group')">
+        <i class="fas fa-users"></i> Jaga Group
+      </button>
+      <button class="filter-btn" onclick="filterCategory('bug')">
+        <i class="fas fa-bug"></i> Bug
+      </button>
+      <button class="filter-btn" onclick="filterCategory('cpanel')">
+        <i class="fas fa-server"></i> cPanel
+      </button>
+      <button class="filter-btn" onclick="filterCategory('store')">
+        <i class="fas fa-store"></i> Store
+      </button>
+      <button class="filter-btn" onclick="filterCategory('apk')">
+        <i class="fab fa-android"></i> APK
+      </button>
+      <button class="filter-btn" onclick="filterCategory('jpm')">
+        <i class="fas fa-comments-dollar"></i> JPM
+      </button>
+      <button class="filter-btn" onclick="filterCategory('pushkontak')">
+        <i class="fas fa-address-book"></i> Push Kontak
+      </button>
+    </div>
   </div>
 
-  <div class="filter-buttons">
-    <button onclick="filterCategory('all')" class="active"><i class="fas fa-th-large"></i> Semua</button>
-    <button onclick="filterCategory('group')"><i class="fas fa-users"></i> Jaga Group</button>
-    <button onclick="filterCategory('bug')"><i class="fas fa-bug"></i> Bug</button>
-    <button onclick="filterCategory('cpanel')"><i class="fas fa-server"></i> cPanel</button>
-    <button onclick="filterCategory('store')"><i class="fas fa-store"></i> Store</button>
-    <button onclick="filterCategory('apk')"><i class="fab fa-android"></i> APK</button>    
-    <button onclick="filterCategory('jpm')"><i class="fas fa-comments-dollar"></i> JPM</button>    
-    <button onclick="filterCategory('telegram')"><i class="fab fa-telegram"></i> Telegram</button>    
-    <button onclick="filterCategory('pushkontak')"><i class="fas fa-address-book"></i> Push Kontak</button>
-  </div>
-
-  <div id="scriptList" class="script-list"></div>
+  <div id="scriptList" class="script-grid"></div>
 </section>
 
-<!-- KOMUNITAS SECTION -->
-<section id="komunitas" class="komunitas">
+<section id="community" class="community-section">
   <div class="section-header">
-    <h2><i class="fas fa-users"></i> Komunitas Resmi</h2>
-    <p>Bergabung dengan komunitas kami untuk update terbaru dan diskusi</p>
+    <div class="section-tag">Komunitas</div>
+    <h2>Bergabung dengan Komunitas</h2>
+    <p>Join grup dan channel untuk update terbaru, diskusi, dan support.</p>
   </div>
 
-  <div class="komunitas-grid">
-    <!-- Grup Telegram -->
-    <a href="https://t.me/yudastore_group" target="_blank" class="komunitas-card telegram">
-      <i class="fab fa-telegram icon-komunitas"></i>
+  <div class="community-grid">
+    <a href="https://t.me/yudastore_group" target="_blank" class="community-card telegram">
+      <div class="community-icon">
+        <i class="fab fa-telegram-plane"></i>
+      </div>
       <h3>Grup Telegram</h3>
-      <p>Join grup Telegram untuk diskusi, sharing script, dan update terbaru dari YUDA STORE.</p>
-      <span class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Grup</span>
+      <p>Diskusi, sharing script, dan update terbaru dari komunitas YUDA STORE.</p>
+      <span class="join-btn">
+        <i class="fas fa-sign-in-alt"></i> Join Grup
+      </span>
     </a>
 
-    <!-- Grup WhatsApp -->
-    <a href="https://chat.whatsapp.com/FN4YYELSQ2N1yYMD9vNcpo?mode=gi_t" target="_blank" class="komunitas-card whatsapp-group">
-      <i class="fab fa-whatsapp icon-komunitas"></i>
+    <a href="https://chat.whatsapp.com/FN4YYELSQ2N1yYMD9vNcpo" target="_blank" class="community-card whatsapp">
+      <div class="community-icon">
+        <i class="fab fa-whatsapp"></i>
+      </div>
       <h3>Grup WhatsApp</h3>
-      <p>Bergabung dengan grup WhatsApp untuk support, tanya jawab, dan sharing bersama member lain.</p>
-      <span class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Grup</span>
+      <p>Support, tanya jawab, dan sharing bersama member lain secara real-time.</p>
+      <span class="join-btn">
+        <i class="fas fa-sign-in-alt"></i> Join Grup
+      </span>
     </a>
 
-    <!-- Saluran WhatsApp -->
-    <a href="https://whatsapp.com/channel/0029VbCgnIwAzNbsIRshju38" target="_blank" class="komunitas-card whatsapp-channel">
-      <i class="fab fa-whatsapp icon-komunitas"></i>
+    <a href="https://whatsapp.com/channel/0029VbCgnIwAzNbsIRshju38" target="_blank" class="community-card channel">
+      <div class="community-icon">
+        <i class="fas fa-broadcast-tower"></i>
+      </div>
       <h3>Saluran WhatsApp</h3>
-      <p>Follow saluran WhatsApp untuk mendapatkan update script terbaru dan informasi penting.</p>
-      <span class="join-btn"><i class="fas fa-bell"></i> Follow Channel</span>
+      <p>Follow channel untuk mendapatkan update script terbaru dan informasi penting.</p>
+      <span class="join-btn">
+        <i class="fas fa-bell"></i> Follow Channel
+      </span>
     </a>
   </div>
 </section>
 
-<!-- KONTAK OWNER -->
-<section id="kontak" class="contact">
+<section id="contact">
   <div class="section-header">
-    <h2><i class="fas fa-address-card"></i> Kontak Owner</h2>
-    <p>Hubungi kami untuk pertanyaan atau kerjasama</p>
+    <div class="section-tag">Kontak</div>
+    <h2>Hubungi Owner</h2>
+    <p>Silakan hubungi untuk pertanyaan atau kerjasama.</p>
   </div>
 
   <div class="contact-grid">
     <div class="contact-card">
-      <div class="icon-purple"><i class="fas fa-user-tie"></i></div>
+      <div class="contact-icon">
+        <i class="fas fa-user-tie"></i>
+      </div>
       <h3>Owner</h3>
-      <p>YUDA STORE</p>
-      <span class="status online">Online</span>
+      <p>YUDA DEV</p>
+      <span class="status-badge">Online</span>
     </div>
 
     <div class="contact-card">
-      <div class="icon-purple"><i class="fab fa-whatsapp"></i></div>
+      <div class="contact-icon">
+        <i class="fab fa-whatsapp"></i>
+      </div>
       <h3>WhatsApp</h3>
       <p>+62 856-5480-9718</p>
-      <a href="https://wa.me/6285654809718" target="_blank" class="contact-btn">Chat Sekarang</a>
+      <a href="https://wa.me/6285654809718" target="_blank" class="contact-btn">
+        <i class="fas fa-comment-dots"></i> Chat Now
+      </a>
     </div>
 
     <div class="contact-card">
-      <div class="icon-purple"><i class="fab fa-telegram"></i></div>
+      <div class="contact-icon">
+        <i class="fab fa-telegram-plane"></i>
+      </div>
       <h3>Telegram</h3>
       <p>@Yuda1345</p>
-      <a href="https://t.me/Yuda1345" target="_blank" class="contact-btn">Message</a>
+      <a href="https://t.me/Yuda1345" target="_blank" class="contact-btn">
+        <i class="fas fa-paper-plane"></i> Message
+      </a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-content">
-    <div class="footer-logo">
-      <i class="fas fa-terminal"></i> YUDA STORE
+    <div class="footer-brand">
+      <h3><i class="fas fa-terminal"></i> YUDA STORE</h3>
+      <p>Platform download script WhatsApp Bot dan Telegram Bot terbaik. Kualitas terjamin, gratis, dan support komunitas yang solid.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+      </div>
     </div>
-    <p>© 2026 YUDA STORE. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#"><i class="fab fa-youtube"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
+    
+    <div class="footer-links">
+      <h4>Kategori</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Jaga Group</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Bug Tools</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> cPanel</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Store</a></li>
+      </ul>
     </div>
+    
+    <div class="footer-links">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Installation</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Report Bug</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-links">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> License</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 YUDA STORE. All rights reserved. Made with <i class="fas fa-heart" style="color: var(--secondary);"></i> by YUDA DEV</p>
   </div>
 </footer>
 
+<script src="sc.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
