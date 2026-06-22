@@ -34,23 +34,23 @@ const scripts = [
     photo: "foto3"
   },
   {
-    name: "SCRIPT DINOROR MB V2",
-    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil. Support Node v20 dengan 800+ fitur.",
-    link: "https://www.mediafire.com/file/47wobd5uiokak6i/Dinoror+MD+v1.1.0.zip/file",
+    name: "SCRIPT OPII",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil. Support Node v20 dengan 600+ fitur.",
+    link: "https://www.mediafire.com/file/ohq76eq6nyaploc/Opii-main-2026.zip/file",
     category: "group",
     icon: "🤖",
     nodeVersion: "v20",
-    features: 800,
+    features: 600,
     platform: "WA",
     photo: "foto4"
   },
   {
-    name: "SCRIPT CANTARELLA MB V3",
-    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil. Support Node v21 dengan 2000+ fitur.",
-    link: "https://www.mediafire.com/file/6yu9518kzitoj6p/Cantarella_V3.zip/file",
+    name: "SCRIPT AQUA V2",
+    desc: "Script cocok untuk jaga grup dengan fitur lengkap dan stabil. Support Node v20 dengan 2000+ fitur.",
+    link: "https://www.mediafire.com/file/ni0d4tx744vpzxh/Aqua+Update+V2.zip/file",
     category: "group",
     icon: "🤖",
-    nodeVersion: "v21",
+    nodeVersion: "v20",
     features: 2000,
     platform: "WA",
     photo: "foto5"

@@ -20,8 +20,8 @@ const CONFIG = {
         foto1: 'https://x.xcute.workers.dev/f/images/31912254895d.jpg',
         foto2: 'https://x.xcute.workers.dev/f/images/6632193fae7a.jpg', 
         foto3: 'https://x.xcute.workers.dev/f/images/bd7f45c150a3.jpg', 
-        foto4: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=400&h=200&fit=crop',   // DINOROR MB V2
-        foto5: 'https://images.unsplash.com/photo-1611162616475-46b635fb686d?w=400&h=200&fit=crop',   // CANTARELLA MB V3
+        foto4: 'https://x.xcute.workers.dev/f/images/dedb02451ac0.jpg', 
+        foto5: 'https://x.xcute.workers.dev/f/images/2653315a3f24.jpg', 
         foto6: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=200&fit=crop',   // HYDROMD MASTER
 
         // === BUG SCRIPTS ===

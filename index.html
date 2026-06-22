@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-<meta name="description" content="Premium WhatsApp Bot Scripts, Bug Tools, cPanel & Store. High quality, fully featured, and professional.">
+<meta name="description" content="All Script Bot, Bug Tools, cPanel & Store. High quality, fully featured, and professional.">
 <meta name="keywords" content="WhatsApp Bot, Script Premium, Bug Tools, cPanel, JPM, Push Kontak">
 <meta name="author" content="YUDA DEV">
 
@@ -945,14 +945,14 @@ section {
 /* Script Grid */
 .script-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 30px;
 }
 
 .script-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 0;
   transition: var(--transition);
   position: relative;
@@ -966,13 +966,15 @@ section {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 16px;
+  right: 16px;
+  width: calc(100% - 32px);
   height: 3px;
   background: linear-gradient(90deg, #3b82f6, #60a5fa);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
+  border-radius: 3px;
 }
 
 .script-card:hover::before {
@@ -987,19 +989,21 @@ section {
 }
 
 .card-image {
-  width: 100%;
+  width: calc(100% - 32px);
   height: 280px;
   object-fit: cover;
-  border-radius: 20px 20px 0 0;
+  border-radius: 16px;
   transition: var(--transition);
+  margin: 16px auto 0;
+  display: block;
 }
 
 .script-card:hover .card-image {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .card-body {
-  padding: 24px;
+  padding: 28px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -2078,13 +2082,13 @@ footer {
   <div class="section-header">
     <div class="section-tag">Katalog</div>
     <h2>Daftar Script Bot</h2>
-    <p>Pilih script sesuai kebutuhan Anda. Semua script gratis dan siap pakai. [WA] = WhatsApp, [TELE] = Telegram</p>
+    <p>Pilih script sesuai kebutuhan Anda. Semua script gratis dan siap di pakai</p>
   </div>
 
   <div class="controls-container">
     <div class="search-box">
       <i class="fas fa-search"></i>
-      <input type="text" id="searchInput" placeholder="Cari script berdasarkan nama... (ketik WA atau TELE untuk filter platform)">
+      <input type="text" id="searchInput" placeholder="Cari script berdasarkan nama...">
     </div>
 
     <div class="filter-buttons">
